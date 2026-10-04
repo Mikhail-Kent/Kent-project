@@ -1,0 +1,399 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #191a25;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+html,
+#root {
+    min-height: 100%;
+    width: 100%;
+}
+
+button {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: inherit;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background-color: #6155ff;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 32px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #6155ff;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #5247e8;
+}
+
+.btn-secondary {
+    border-color: #dce0eb;
+    background-color: #ffffff;
+    color: #191a25;
+}
+
+.btn-secondary:hover {
+    background-color: #f8f9fc;
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #a5b4fc;
+    outline-offset: 4px;
+}
+
+/* Общий вид карточки. Расположение задаёт страница. */
+.activity-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.card-tag {
+    align-self: flex-start;
+    padding: 7px 14px;
+    border: 1px solid;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.tag-sport {
+    border-color: #ffb76d;
+    background-color: #fff2e2;
+    color: #b85b00;
+}
+
+.tag-project {
+    border-color: #7465ff;
+    background-color: #eeebff;
+    color: #5948ff;
+}
+
+.tag-games {
+    border-color: #19bc80;
+    background-color: #e2f7ee;
+    color: #008658;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.card-meta {
+    color: #697084;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Welcome-страница */
+.welcome-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    /* dvh учитывает видимую высоту экрана на телефоне. */
+    min-height: 100dvh;
+    background-color: #ffffff;
+}
+
+.welcome-header {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 24px 5%;
+}
+
+.welcome-header nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    margin-left: auto;
+    margin-right: 48px;
+}
+
+.welcome-header nav a,
+.welcome-header nav button {
+    border: 0;
+    background: none;
+    color: #535b70;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.welcome-header nav a:hover {
+    color: #6155ff;
+}
+
+.welcome-header > .btn {
+    min-width: 190px;
+}
+
+.main-container {
+    flex: 1;
+    display: grid;
+    /* minmax позволяет колонкам уменьшаться без горизонтальной прокрутки. */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 60px;
+    padding: 48px 6% 80px;
+}
+
+.hero-left {
+    min-width: 0;
+}
+
+.badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 7px 18px;
+    border: 1px solid #ffb76d;
+    border-radius: 20px;
+    background-color: #fff2e2;
+    color: #b85b00;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.hero-left h1 {
+    margin-bottom: 44px;
+    /* clamp плавно меняет размер шрифта, сохраняя нижний и верхний пределы. */
+    font-size: clamp(40px, 3.6vw, 72px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.hero-desc {
+    margin-bottom: 64px;
+    color: #7e8294;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.cta-group .btn {
+    min-width: 210px;
+}
+
+.verification {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #008658;
+    font-size: 13px;
+}
+
+.check-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #19bc80;
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
+.gradient-circle {
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    /* Соотношение 1 к 1 сохраняет круг при изменении ширины окна. */
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #eee7fb, #fff1df 55%, #e2f7ee);
+}
+
+/* В макете карточки находятся прямо на круге, без белой подложки. */
+.gradient-circle .activity-card {
+    position: absolute;
+    width: 56%;
+    gap: 0;
+    background: transparent;
+}
+
+.card-1 {
+    top: 15%;
+    left: 12%;
+}
+
+.card-2 {
+    right: 0;
+    bottom: 20%;
+}
+
+.gradient-circle .card-meta {
+    margin-top: 8px;
+}
+
+.btn-card {
+    align-self: flex-start;
+    min-width: 176px;
+    margin-top: 24px;
+}
+
+@media (max-width: 1200px) {
+    .welcome-header nav {
+        gap: 24px;
+        margin-right: 16px;
+    }
+
+    .main-container {
+        gap: 32px;
+        padding: 48px 4% 64px;
+    }
+
+    .hero-left h1 {
+        font-size: 40px;
+    }
+
+    .hero-desc {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-right {
+        margin-top: 16px;
+    }
+
+    .gradient-circle {
+        max-width: 500px;
+    }
+
+    .hero-left {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .welcome-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .welcome-header nav {
+        order: 3;
+        justify-content: space-between;
+        width: 100%;
+        gap: 12px;
+        margin: 0;
+    }
+
+    .welcome-header > .btn {
+        min-width: 0;
+        padding: 12px 16px;
+    }
+
+    .main-container {
+        padding: 36px 20px 60px;
+    }
+
+    .hero-left h1 {
+        font-size: 32px;
+        letter-spacing: 0;
+    }
+
+    .hero-desc {
+        margin-bottom: 32px;
+        font-size: 14px;
+    }
+
+    .hero-desc br {
+        display: none;
+    }
+
+    .cta-group .btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .gradient-circle {
+        max-width: 360px;
+    }
+
+    .gradient-circle .activity-card {
+        width: 220px;
+    }
+
+    .card-1 {
+        top: 12%;
+        left: 6%;
+    }
+
+    .card-2 {
+        right: 0;
+        bottom: 14%;
+    }
+
+    .gradient-circle .card-title {
+        font-size: 16px;
+    }
+}
+
